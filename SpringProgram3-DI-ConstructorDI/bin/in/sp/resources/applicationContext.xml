@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!--  Constructor DI , use ref for injecting obj  and use of <constructor-arg> tag instead of <property> tag--> 
+    
+    <bean class="in.sp.beans.Student" id="stdId">
+     		<constructor-arg value="222"/>
+     		<constructor-arg value="Prasad"/>
+     		<constructor-arg ref="add1id"/>
+    </bean>
+    <bean class="in.sp.beans.Address" id="add1id">
+     		<constructor-arg value="1000"/>
+     		<constructor-arg value="Pune"/>
+     		<constructor-arg value="411057"/>
+    </bean>
+
+</beans>
