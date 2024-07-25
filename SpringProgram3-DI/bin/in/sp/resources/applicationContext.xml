@@ -6,6 +6,7 @@
 
     <!-- bean definitions here -->
     
+    <!-- DI is process by which we can inject one object into another object  -->
     <!--  Setter method DI , use ref for injecting obj --> 
     
     <bean class="in.sp.beans.Student" id="stdId">
