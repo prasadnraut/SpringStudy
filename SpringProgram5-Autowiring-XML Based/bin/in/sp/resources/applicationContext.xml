@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+<bean class="in.sp.beans.Address" id="address">
+	<property name="houseNo" value="12"></property>
+	<property name="city" value="Nashik"></property>
+	<property name="pincode" value="898989"></property>
+</bean>
+
+<!-- Use autowire attribute in bean tag inside property tag with modes -->
+<!-- With byName mode - use same id and property name for bean Address - It internally uses setter method-->
+<!-- byType - matches data type of property and type of bean matches and if yes then achieve autowiring 
+			  If more than one bean objects present in xml config for same class type then, 
+			  use true or false in attribute autowire-candidate
+			  It also uses setter methods
+-->
+<!-- constructor mode - Add constructors to bean classes and in xml config file, use constructor-arg tag instead 
+	of property tag and also use autowire="constructor" attribute 
+	also mention index(position) attribute inside constructor-arg tag
+	For more than one bean, use false in attribute autowire-candidate
+-->
+
+
+<bean class="in.sp.beans.Student" id="studid" autowire="byName">
+	<property name="name" value="Prasad"></property>
+	<property name="rollNo" value="555"></property>
+	<!--  <property name="address" ref="addrid"></property> -->  <!-- Manual DI -->
+</bean>
+</beans>
